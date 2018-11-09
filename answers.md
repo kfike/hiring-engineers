@@ -60,6 +60,15 @@ I used my my_metric.yaml to set the min_collection_interval to 45, looked at my 
 #### (screenshot)
 <img src="https://github.com/kfike/hiring-engineers/blob/solutions-engineer/images/1/4/1.png" />
 
+### Summary
+I find setup to be one of the crucial decisions in deciding a third party provider because robust integrations always seem have a hidden cost.
+
+Having worked with third party integrations in the past, most of them require paid trainings just to get it up an running. More importantly, it costs money in developer time. After "training" that developer to customize the app, what happens if they leave the company? The process starts over training other developers and increasing the cost. If a problem exists that is too niched, a company might need to bring in an expensive consultant to solve it.
+
+Datadog's integration seemed the complete opposite. The docs were easy to read and I was up in running within minutes. The setup felt native, changing config files that any ops person would know how to change. Custom metrics were as easy as importing a library and integrating with the your Python api.
+
+Using native a toolset enables developers to customize the application the way they want and speaks a language they already know and understand. The result is on going customization anyone on the team can develop, all the while saving your company hundreds of thousands of dollars.
+
 ## 2) Visualizing Data
 
 Completed Dashboard: <a href="https://app.datadoghq.com/dash/959266/my-metric-4">https://app.datadoghq.com/dash/959266/my-metric-4</a>
@@ -120,6 +129,18 @@ Note: I used a ruby script
 
 Bonus: Noticed that my anomaly function was pretty empty, so it’s technically not detecting anything. If I had a db receiving inputs, it would be displaying an algorithmic function to detect an unusual amount of max connections
 
+### Summary
+The Datadog UI is the highlight of the entire application. Having been a New Relic user over the last 7-8 years, it's hard for me not to compare the two.
+
+All developers know that log data is a necessary evil and spacing monitoring visualizations help it make sense. The problem with most monitoring applications come straight out the box and give you graphs that are predefined by the application (this is my direct shot at New Relic - haha). The issue with this is all infrastructure is different and changes constantly.
+
+The UI that worked a few years doesn't necessary work today and the result is looking at multiple graphs just to come to one solution. Another result is using multiple providers to measure different metrics, doubling/tripling the cost of tooling.
+
+Datadog seems to take the approach of: Config the data you want to load in and custom create dashboards you want to visualize. Again, the customization of the dashboards enables ops teams to create dashboards they want to see. The power in this (and cost savings) exists in the ability to quickly see log data graphed in metrics that make sense. Adding multiple metrics to one dashboard gives teams quicker analysis verses looking over endless logs. One problem with a database might take a developer hours to locate costing the company time and money.
+
+One more note: My guess is that most teams initially use a third party integration because they have specific pain points they're trying to solve. The product teams of these providers are knowledgeable of these pain points and make sure the solution is front and center. Being that the monitoring space is a competitive market, a huge sell for me would be Datadog's ability to build customizable UIs for any future metric I hadn't thought of. Simply put, the customization of the UI doesn't limit measuring ability but gives my team thousands of possible features.
+
+
 ## 3) Monitoring Data
 
 I used the UI: <a href="https://app.datadoghq.com/monitors#create/metric">https://app.datadoghq.com/monitors#create/metric</a>
@@ -147,6 +168,16 @@ Bonus:
 #### (screenshot)
 <img src="https://github.com/kfike/hiring-engineers/blob/solutions-engineer/images/3/bonus/Screen Shot 2018-10-24 at 11.13.38 PM.png" />
 
+### Summary
+An Ops team worst enemy is the false notification that doesn't meaning anything spamming their email box. This type of noise hides other important alerts.
+
+In my experience, false alarms primarily come from:
+
+- using multiple providers for monitoring and teams not giving access to configure other team's providers
+- lack customization of monitor
+
+Again, the monitoring tool allows a developer to get the correct alert and to know immediately how serious the issue is. The user interface allows for easy configuration to specifically notify the correct metric at the correct time. This prevents bloated email inboxes with useless warnings and missing important messages.
+
 
 ## 4) Collecting APM Data:
 
@@ -156,6 +187,9 @@ I used the flask app example and the docs for the APM setup:
 <img src="https://github.com/kfike/hiring-engineers/blob/solutions-engineer/images/4/1.png" />
 
 Dashboard: <a href="https://app.datadoghq.com/dash/959266/my-metric-4">https://app.datadoghq.com/dash/959266/my-metric-4</a>
+
+### Summary
+The most impressive feature of Datadog's APM app is how easily it integrates with custom dashboards. My impression was that it would be standalone, similar to other space monitors that have added it. The power in this the ability to monitor memory issues on the infrastructure side. For example, one could monitor database and see dashboard with metrics on stack traces performing connections to that database. Seeing this displayed in one dashboard would save me a massive amount of time vs having to check multiple logs and graphs.
 
 ## 5) Final Question:
 
